@@ -4,15 +4,15 @@ These are my solutions for [Project Euler problems](https://projecteuler.net/arc
 ## Current Progress
 | Languages                                                                      | Progress          |
 | ------------------------------------------------------------------------------ | ----------------- |
-| [Python](https://github.com/lcsm29/project-euler/tree/main/python)             | 0 / 747           |
+| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 0 / 747           |
 | [C](https://github.com/lcsm29/project-euler/tree/main/c)                       | 0 / 747           |
 | [C++](https://github.com/lcsm29/project-euler/tree/main/cpp)                   | 0 / 747           |
-| [C#](https://github.com/lcsm29/project-euler/tree/main/csharp)                 | 0 / 747           |
-| [F#](https://github.com/lcsm29/project-euler/tree/main/fsharp)                 | 0 / 747           |
+| [C#](https://github.com/lcsm29/project-euler/tree/main/cs)                     | 0 / 747           |
+| [F#](https://github.com/lcsm29/project-euler/tree/main/fs)                     | 0 / 747           |
 | [Go](https://github.com/lcsm29/project-euler/tree/main/go)                     | 0 / 747           |
-| [Haskell](https://github.com/lcsm29/project-euler/tree/main/haskell)           | 0 / 747           |
+| [Haskell](https://github.com/lcsm29/project-euler/tree/main/hs)                | 0 / 747           |
 | [Java](https://github.com/lcsm29/project-euler/tree/main/java)                 | 0 / 747           |
-| [JavaScript](https://github.com/lcsm29/project-euler/tree/main/javascript)     | 0 / 747           |
+| [JavaScript](https://github.com/lcsm29/project-euler/tree/main/js)             | 0 / 747           |
 | [PHP](https://github.com/lcsm29/project-euler/tree/main/php)                   | 0 / 747           |
-| [Ruby](https://github.com/lcsm29/project-euler/tree/main/ruby)                 | 0 / 747           |
+| [Ruby](https://github.com/lcsm29/project-euler/tree/main/rb)                   | 0 / 747           |
 | [SQL](https://github.com/lcsm29/project-euler/tree/main/sql)                   | 0 / 747           |
