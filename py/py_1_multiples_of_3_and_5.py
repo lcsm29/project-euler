@@ -48,6 +48,19 @@ def fn_triple_gauss_sum(n):
     return gauss_sum(3) + gauss_sum(5) - gauss_sum(15)
 
 
+def fn_g_sum_wo_def(n):
+    return gauss_sum(3, n) + gauss_sum(5, n) - gauss_sum(15, n)
+
+
+def gauss_sum(num, n):
+        if n % num != 0:
+            mults_count = n // num
+        else:
+            mults_count = n // num - 1
+        g_sum_for_count = (mults_count + 1) * 0.5 * mults_count
+        return int(g_sum_for_count * num)
+
+
 if __name__ == '__main__':
     n = 1000
     i = 10000
@@ -56,3 +69,4 @@ if __name__ == '__main__':
     timed.caller(fn_slower_than_short, n, i)
     timed.caller(fn_triple_sum, n, i)
     timed.caller(fn_triple_gauss_sum, n, i)
+    timed.caller(fn_g_sum_wo_def, n, i)

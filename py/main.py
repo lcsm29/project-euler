@@ -58,10 +58,12 @@ if __name__ == '__main__':
     fastest_overall = {}
     wrong_answers = {}
     num_fn = 0
+    sec = 1
     for k in file_names.keys():
-        print(f'Calculating Project Euler ID {k} ({iters[k]:,} times): ')
+        i = get_iters(k, sec)
+        print(f'Calculating Project Euler ID {k} ({i:,} times): ')
         funcs = importlib.import_module(file_names[k], package=None)
-        comparo(call_everything(iters[k], var[k]))
+        comparo(call_everything(i, var[k]))
         num_wrong = validate_result_once(k, var[k])
         if num_wrong:
             wrong_answers[k] = num_wrong
