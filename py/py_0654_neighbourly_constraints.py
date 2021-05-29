@@ -1,0 +1,25 @@
+# Solution of;
+# Project Euler Problem 654: Neighbourly Constraints
+# https://projecteuler.net/problem=654
+# 
+# Let $T(n, m)$ be the number of $m$-tuples of positive integers such that the 
+# sum of any two neighbouring elements of the tuple is $\le n$. For example, 
+# $T(3, 4)=8$, via the following eight $4$-tuples:$(1, 1, 1, 1)$$(1, 1, 1, 
+# 2)$$(1, 1, 2, 1)$$(1, 2, 1, 1)$$(1, 2, 1, 2)$$(2, 1, 1, 1)$$(2, 1, 1, 
+# 2)$$(2, 1, 2, 1)$You are also given that $T(5, 5)=246$, $T(10, 10^{2}) 
+# \equiv 862820094 \pmod{1\,000\,000\,007}$ and $T(10^2, 10) \equiv 782136797 
+# \pmod{1\,000\,000\,007}$. Find $T(5000, 10^{12}) \bmod 1\,000\,000\,007$.
+# 
+# by lcsm29 http://github.com/lcsm29/project-euler
+import timed
+
+
+def dummy(n):
+    pass
+
+
+if __name__ == '__main__':
+    n = 1000
+    i = 10000
+    prob_id = 654
+    timed.caller(dummy, n, i, prob_id)

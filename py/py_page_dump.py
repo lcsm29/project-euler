@@ -59,7 +59,7 @@ for i in range(start, stop + 1):
     prob_html = response.read().decode().replace('\n', '')
     problems[i] = add_line_break(add_whitespace(strip_tags(prob_html)))    
 
-    f_name = 'py_' + str(i) + '_' + str(titles[i]).replace(' ', '_').lower()
+    f_name = 'py_' + str(i).zfill(4) + '_' + str(titles[i]).replace(' ', '_').lower()
     content = [
         "# Solution of;",
         "# Project Euler Problem " + str(i) + ": " + str(titles[i]),
@@ -72,13 +72,14 @@ for i in range(start, stop + 1):
         "",
         "",
         "def dummy(n):",
-        "   pass",
+        "    pass",
         "",
         "",
         "if __name__ == '__main__':",
-        "   n = 1000",
-        "   i = 10000",
-        "   timed.caller(dummy, n, i)"
+        "    n = 1000",
+        "    i = 10000",
+        "    prob_id = " + str(i),
+        "    timed.caller(dummy, n, i, prob_id)"
     ]
     files[f_name + '.py'] = content
     try:
