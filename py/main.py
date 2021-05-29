@@ -1,6 +1,7 @@
 import statistics as stat
 import time
 import importlib
+import os
 from py_data import *
 from py_updater import readme_updater, scoreboard_updater
 
@@ -63,7 +64,10 @@ if __name__ == '__main__':
     for i in file_names.keys():
         iters = get_iters(i, sec)
         print(f'Calculating Project Euler ID {i} ({iters:,} times): ')
-        funcs = importlib.import_module(file_names[i], package=None)
+        if os.name == 'nt':
+            funcs = importlib.import_module(file_names[i], package=None)
+        if os.name == 'posix':
+            funcs = __import__(file_names[i])
         comparo(call_everything(iters, var[i]), i)
         num_wrong = validate_result_once(i, var[i])
         if num_wrong:
