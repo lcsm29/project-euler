@@ -8,7 +8,7 @@ Main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-eule
 ## Current Progress
 | Languages                                                                      | Progress          |
 | ------------------------------------------------------------------------------ | ----------------- |
-| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 3 / 747           |
+| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 4 / 747           |
 | [C](https://github.com/lcsm29/project-euler/tree/main/c)                       | 0 / 747           |
 | [C++](https://github.com/lcsm29/project-euler/tree/main/cpp)                   | 0 / 747           |
 | [C#](https://github.com/lcsm29/project-euler/tree/main/cs)                     | 0 / 747           |
@@ -32,15 +32,15 @@ This table shows how much iterations it computes for about a second. I haven't i
 | 1         |      5,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 2         |    500,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |        300 |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |            |            |            |            |            |            |            |            |            |            |            |            |
 
 ### Average execution time in nanoseconds (lower is better)
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |        821 |            |            |            |            |            |            |            |            |            |            |            |
-| 2         |      2,058 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |    310,328 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |        795 |            |            |            |            |            |            |            |            |            |            |            |
+| 2         |      2,074 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |    315,380 |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |    554,828 |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |            |            |            |            |            |            |            |            |            |            |            |            |

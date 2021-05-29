@@ -2,7 +2,7 @@ file_names = {
     1: 'py_0001_multiples_of_3_and_5',
 	2: 'py_0002_even_fibonacci_numbers',
 	3: 'py_0003_largest_prime_factor',
-#    4: 'py_0004_largest_palindrome_product',
+    4: 'py_0004_largest_palindrome_product',
 #    5: 'py_0005_smallest_multiple',
 #    6: 'py_0006_sum_square_difference',
 #    7: 'py_0007_10001st_prime',
@@ -740,18 +740,21 @@ ans = {
 	  1: 233168,
 	  2: 4613732,
 	  3: 6857,
+	  4: 906609,
 }
 
 var = {
 	1: 1000,
 	2: 4000000,
 	3: 600851475143,
+	4: 999,
 }
 
 iters = {
 	1: 5000,
 	2: 500000,
 	3: 1500,
+	4: 300,
 }
 
 def get_iters(index, seconds):

@@ -10,12 +10,40 @@
 import timed
 
 
-def dummy(n):
-    pass
+def fn_brute_tuned(n):
+    max_pal = 0
+    for first in range(n, int(n * 0.1), -1):
+        if first ** 2 < max_pal:
+            break
+        for second in range(n, int(n * 0.1), -1):
+            if first * second < max_pal:
+                break
+            if str(first * second) == str(first * second)[::-1]:
+                max_pal = first * second
+    return max_pal
+
+
+def fn_fast_pal(n):
+    max_pal = 9
+    a = n
+    while a >= 10 ** (len(str(n)) - 1):
+        if a % 11 == 0:
+            b, divided = n, 1
+        else:
+            b, divided = n - n % 11, 11
+        while b >= a:
+            if a * b <= max_pal:
+                break
+            if str(a * b) == str(a * b)[::-1]:
+                max_pal = a * b
+            b = b - divided
+        a = a - 1
+    return max_pal
 
 
 if __name__ == '__main__':
-    n = 1000
-    i = 10000
+    n = 999
+    i = 300
     prob_id = 4
-    timed.caller(dummy, n, i, prob_id)
+    timed.caller(fn_brute_tuned, n, i, prob_id)
+    timed.caller(fn_fast_pal, n, i, prob_id)
