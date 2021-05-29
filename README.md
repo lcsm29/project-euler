@@ -4,7 +4,7 @@ These are my solutions for [Project Euler problems](https://projecteuler.net/arc
 ## Current Progress
 | Languages                                                                      | Progress          |
 | ------------------------------------------------------------------------------ | ----------------- |
-| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 0 / 747           |
+| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 2 / 747           |
 | [C](https://github.com/lcsm29/project-euler/tree/main/c)                       | 0 / 747           |
 | [C++](https://github.com/lcsm29/project-euler/tree/main/cpp)                   | 0 / 747           |
 | [C#](https://github.com/lcsm29/project-euler/tree/main/cs)                     | 0 / 747           |
