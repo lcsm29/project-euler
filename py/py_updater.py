@@ -1,4 +1,4 @@
-from py_data import file_names
+from py_data import file_names, iters
 import glob
 import sys
 import io
@@ -50,3 +50,19 @@ def get_file_names():
         name = '#    ' + n.replace('py_', '').strip('0').split('_', 1)[0] + ": '" + n + "',"
         with io.open('py_file_names.txt', 'a', encoding='utf=8') as f:
             f.writelines(name + '\n')
+
+
+def scoreboard_updater(n, result_avg):
+    readme_path = str(file.parents[1]) + '\\README.md'
+    target_iter, target_avg = 'Number of Iterations (', 'nanoseconds (lower is better)'
+    l_no_iter, l_no_avg = 0, 0
+    with io.open(readme_path, 'r', encoding='utf-8') as f:
+        tmp = f.readlines()
+    for i, line in enumerate(tmp):
+        if target_iter in line: l_no_iter = i + 3 + n
+        if target_avg in line: l_no_avg = i + 3 + n
+    if l_no_iter != 0 and l_no_avg != 0:
+        tmp[l_no_avg] = tmp[l_no_avg][:13] + f'{result_avg:>11,.0f} ' + tmp[l_no_avg][25:]
+        tmp[l_no_iter] = tmp[l_no_iter][:13] + f'{iters[n]:11,.0f} ' + tmp[l_no_iter][25:]
+        with io.open(readme_path, 'w', encoding='utf-8') as f:
+            f.writelines(tmp)

@@ -2,7 +2,7 @@ import statistics as stat
 import time
 import importlib
 from py_data import *
-from py_updater import readme_updater
+from py_updater import readme_updater, scoreboard_updater
 
 
 def call_everything(i, *var):
@@ -24,7 +24,7 @@ def call_everything(i, *var):
     return result
 
 
-def comparo(result):
+def comparo(result, idx):
     fastest = {'overall': [float('inf'), ''], 'min': [float('inf'), ''],
                'avg':     [float('inf'), ''], 'max': [float('inf'), '']}
     slowest = {'overall': [0, ''], 'min': [0, ''],
@@ -41,6 +41,7 @@ def comparo(result):
         print(f'fastest {f[0]}: {f[1][1]} took {f[1][0]:,.0f}ns')
         print(f'slowest {s[0]}: {s[1][1]} took {s[1][0]:,.0f}ns'
               f' ({s[1][0]/f[1][0]:.2f} times slower)')
+    scoreboard_updater(idx, fastest['avg'][0])
 
 
 def validate_result_once(i, *var):
@@ -59,14 +60,14 @@ if __name__ == '__main__':
     wrong_answers = {}
     num_fn = 0
     sec = 1
-    for k in file_names.keys():
-        i = get_iters(k, sec)
-        print(f'Calculating Project Euler ID {k} ({i:,} times): ')
-        funcs = importlib.import_module(file_names[k], package=None)
-        comparo(call_everything(i, var[k]))
-        num_wrong = validate_result_once(k, var[k])
+    for i in file_names.keys():
+        iters = get_iters(i, sec)
+        print(f'Calculating Project Euler ID {i} ({iters:,} times): ')
+        funcs = importlib.import_module(file_names[i], package=None)
+        comparo(call_everything(iters, var[i]), i)
+        num_wrong = validate_result_once(i, var[i])
         if num_wrong:
-            wrong_answers[k] = num_wrong
+            wrong_answers[i] = num_wrong
     if len(wrong_answers):
         for k, v in wrong_answers.items():
             print(f"ID {k}({file_names[k]}): {v} function(s) failed")

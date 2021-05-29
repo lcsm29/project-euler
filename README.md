@@ -29,9 +29,9 @@ This section is not implemented yet, but it's for the speed comparison of each l
 This table shows how much iterations it computes for about a second. I haven't implemented it yet, but running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will automatically update this table. The main file not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |            |            |            |            |            |            |            |            |            |            |            |            |
-| 2         |            |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |      5,000 |            |            |            |            |            |            |            |            |            |            |            |
+| 2         |    500,000 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
 | 4         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |            |            |            |            |            |            |            |            |            |            |            |            |
 
@@ -39,8 +39,8 @@ This table shows how much iterations it computes for about a second. I haven't i
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |            |            |            |            |            |            |            |            |            |            |            |            |
-| 2         |            |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |        821 |            |            |            |            |            |            |            |            |            |            |            |
+| 2         |      2,058 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |    310,328 |            |            |            |            |            |            |            |            |            |            |            |
 | 4         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |            |            |            |            |            |            |            |            |            |            |            |            |
