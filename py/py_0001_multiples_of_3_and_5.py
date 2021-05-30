@@ -9,7 +9,7 @@
 # by lcsm29 http://github.com/lcsm29/project-euler
 import timed
 
-
+""" slower funcs removed
 def fn_short(n):
     return sum([i for i in range(1, n) if i % 3 == 0 or i % 5 == 0])
 
@@ -28,7 +28,7 @@ def fn_add_directly(n):
         if i % 3 == 0 or i % 5 == 0:
             total += i
     return total
-
+"""
 
 def fn_triple_sum(n):
     l3 = [i for i in range(3, n, 3)]
@@ -63,11 +63,11 @@ def gauss_sum(num, n):
 
 if __name__ == '__main__':
     n = 1_000
-    i = 5_000
+    i = 50_000
     prob_id = 1
-    timed.caller(fn_short, n, i, prob_id)
-    timed.caller(fn_add_directly, n, i, prob_id)
-    timed.caller(fn_slower_than_short, n, i, prob_id)
+    # timed.caller(fn_short, n, i, prob_id)
+    # timed.caller(fn_add_directly, n, i, prob_id)
+    # timed.caller(fn_slower_than_short, n, i, prob_id)
     timed.caller(fn_triple_sum, n, i, prob_id)
     timed.caller(fn_triple_gauss_sum, n, i, prob_id)
     timed.caller(fn_g_sum_wo_def, n, i, prob_id)
