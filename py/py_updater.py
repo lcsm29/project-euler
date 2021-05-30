@@ -67,7 +67,14 @@ def readme_updater():
 
 
 def scoreboard_updater(n, result_avg):
-    target_iter, target_avg = 'Number of Iterations (', 'nanoseconds (lower is better)'
+    def conv():
+        prefix_dict = {0: 'ns', 1: 'μs', 2: 'ms', 3: ' s'}
+        copied, counter = result_avg, 0
+        while len(str(int(copied))) > 6:
+            copied *= 0.001
+            counter += 1
+        return f'{result_avg:11,.0f} ' if counter == 0 else f'{copied:9,.0f}' + prefix_dict[counter] + ' '
+    target_iter, target_avg = 'Number of Iterations (', 'unless specified) (lower is better)'
     l_no_iter, l_no_avg = 0, 0
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
         tmp = f.readlines()
@@ -75,7 +82,7 @@ def scoreboard_updater(n, result_avg):
         if target_iter in line: l_no_iter = i + 3 + n
         if target_avg in line: l_no_avg = i + 3 + n
     if l_no_iter != 0 and l_no_avg != 0:
-        tmp[l_no_avg] = tmp[l_no_avg][:13] + f'{result_avg:>11,.0f} ' + tmp[l_no_avg][25:]
+        tmp[l_no_avg] = tmp[l_no_avg][:13] + conv() + tmp[l_no_avg][25:]
         tmp[l_no_iter] = tmp[l_no_iter][:13] + f'{iters[n]:11,.0f} ' + tmp[l_no_iter][25:]
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)
