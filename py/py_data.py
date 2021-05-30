@@ -3,7 +3,7 @@ file_names = {
 	2: 'py_0002_even_fibonacci_numbers',
 	3: 'py_0003_largest_prime_factor',
     4: 'py_0004_largest_palindrome_product',
-#    5: 'py_0005_smallest_multiple',
+    5: 'py_0005_smallest_multiple',
 #    6: 'py_0006_sum_square_difference',
 #    7: 'py_0007_10001st_prime',
 #    8: 'py_0008_largest_product_in_a_series',
@@ -737,24 +737,27 @@ file_names = {
 }
 
 ans = {
-	  1: 233168,
-	  2: 4613732,
-	  3: 6857,
-	  4: 906609,
+	  1: 233_168,
+	  2: 4_613_732,
+	  3: 6_857,
+	  4: 906_609,
+	  5: 232_792_560,
 }
 
 var = {
-	1: 1000,
-	2: 4000000,
-	3: 600851475143,
+	1: 1_000,
+	2: 4_000_000,
+	3: 600_851_475_143,
 	4: 999,
+	5: 20,
 }
 
 iters = {
-	1: 5000,
-	2: 500000,
-	3: 1500,
+	1: 50_000,
+	2: 500_000,
+	3: 1_500,
 	4: 300,
+	5: 20_000,
 }
 
 

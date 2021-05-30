@@ -1,7 +1,6 @@
 import statistics as stat
 import time
 import importlib
-import os
 from py_data import *
 from py_updater import readme_updater, scoreboard_updater
 
@@ -41,19 +40,19 @@ def comparo(result, idx):
     for f, s in zip(fastest.items(), slowest.items()):
         print(f'fastest {f[0]}: {f[1][1]} took {f[1][0]:,.0f}ns')
         print(f'slowest {s[0]}: {s[1][1]} took {s[1][0]:,.0f}ns'
-              f' ({s[1][0]/f[1][0]:.2f} times slower)')
+              f' ({s[1][0]/f[1][0]:.2f}x)')
     scoreboard_updater(idx, fastest['avg'][0])
 
 
 def validate_result_once(i, *var):
     fn_lst = [v for f, v in funcs.__dict__.items() if f.startswith('fn_')]
     correct_answer = ans[i]
-    num_wrong = 0
+    num_err = 0
     for f in fn_lst:
         if f.__call__(var[0]) != correct_answer:
-            num_wrong += 1
-    print(f"Number of wrong answers: {num_wrong}\n")
-    return num_wrong
+            num_err += 1
+    print(f"Number of wrong answer{'s' if num_err > 1 else ''}: {num_err}\n")
+    return num_err
 
 
 if __name__ == '__main__':
@@ -73,5 +72,5 @@ if __name__ == '__main__':
         for k, v in wrong_answers.items():
             print(f"ID {k}({file_names[k]}): {v} function(s) failed")
     else:
-        print(f"0/{num_fn} functions failed")
+        print(f"0/{num_fn} function failed")
     readme_updater()
