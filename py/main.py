@@ -1,6 +1,7 @@
 import statistics as stat
 import time
 import importlib
+import os
 from py_data import *
 from py_updater import readme_updater, scoreboard_updater
 
