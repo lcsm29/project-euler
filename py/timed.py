@@ -13,8 +13,9 @@ def caller(fn, feed_var, num_iterations, id):
         r.append(time.perf_counter_ns() - start)
     print(f"time elapsed {str_fn}: {time.perf_counter_ns() - outer:,}ns "
             f"(min: {min(r):,}ns, mean: {stat.mean(r):,}ns, max: {max(r):,}ns) ", end='')
-    incorrect = ''
     if py_data.ans[id] != fn(feed_var):
-        incorrect = ' (incorrect)'
-    print(f"Expected result: {py_data.ans[id]:,}, Actual result: {fn(feed_var):,}{incorrect}")
+        print(f"Expected result: {py_data.ans[id]:,}, "
+              f"Actual result: {fn(feed_var):,} (incorrect)")
+    else:
+        print()
     return {str_fn: (min(r), stat.mean(r), max(r))}
