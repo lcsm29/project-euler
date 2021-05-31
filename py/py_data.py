@@ -4,7 +4,7 @@ file_names = {
 	3: 'py_0003_largest_prime_factor',
     4: 'py_0004_largest_palindrome_product',
     5: 'py_0005_smallest_multiple',
-#    6: 'py_0006_sum_square_difference',
+    6: 'py_0006_sum_square_difference',
 #    7: 'py_0007_10001st_prime',
 #    8: 'py_0008_largest_product_in_a_series',
 #    9: 'py_0009_special_pythagorean_triplet',
@@ -742,6 +742,7 @@ ans = {
 	  3: 6_857,
 	  4: 906_609,
 	  5: 232_792_560,
+	  6: 25_164_150,
 }
 
 var = {
@@ -750,6 +751,7 @@ var = {
 	3: 600_851_475_143,
 	4: 999,
 	5: 20,
+	6: 100,
 }
 
 iters = {
@@ -758,6 +760,7 @@ iters = {
 	3: 1_500,
 	4: 300,
 	5: 20_000,
+	6: 50_000
 }
 
 
