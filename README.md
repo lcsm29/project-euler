@@ -29,11 +29,11 @@ This section is not implemented yet, but it's for the speed comparison of each l
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |        812 |            |            |            |            |            |            |            |            |            |            |            |
-| 2         |      2,101 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |    316,760 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |    574,040 |            |            |            |            |            |            |            |            |            |            |            |
-| 5         |     52,797 |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |        805 |            |            |            |            |            |            |            |            |            |      1,043 |            |
+| 2         |      2,060 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |    317,204 |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |    645,848 |            |            |            |            |            |            |            |            |            |            |            |
+| 5         |     52,126 |            |            |            |            |            |            |            |            |            |            |            |
 | 6         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 7         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 8         |            |            |            |            |            |            |            |            |            |            |            |            |
@@ -44,7 +44,7 @@ This table shows how much nanoseconds it took for the fastest algo to complete o
 This table shows how much iterations it computes for about a second. The main file not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |     50,000 |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |     50,000 |            |            |            |            |            |            |            |            |            |      4,000 |            |
 | 2         |    500,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
 | 4         |        300 |            |            |            |            |            |            |            |            |            |            |            |
