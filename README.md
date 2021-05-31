@@ -8,7 +8,7 @@ Main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-eule
 ## Current Progress
 | Languages                                                                      | Progress          |
 | ------------------------------------------------------------------------------ | ----------------- |
-| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 6 / 747           |
+| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 | 7 / 747           |
 | [C](https://github.com/lcsm29/project-euler/tree/main/c)                       | 0 / 747           |
 | [C++](https://github.com/lcsm29/project-euler/tree/main/cpp)                   | 0 / 747           |
 | [C#](https://github.com/lcsm29/project-euler/tree/main/cs)                     | 0 / 747           |
@@ -29,13 +29,13 @@ This section is not implemented yet, but it's for the speed comparison of each l
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |        829 |            |            |            |            |            |            |            |            |            |      1,043 |            |
-| 2         |      2,090 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |    316,916 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |    570,123 |            |            |            |            |            |            |            |            |            |            |            |
-| 5         |     52,381 |            |            |            |            |            |            |            |            |            |            |            |
-| 6         |        302 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |        859 |            |            |            |            |            |            |            |            |            |      1,043 |            |
+| 2         |      2,083 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |    316,030 |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |    552,845 |            |            |            |            |            |            |            |            |            |            |            |
+| 5         |     52,374 |            |            |            |            |            |            |            |            |            |            |            |
+| 6         |        304 |            |            |            |            |            |            |            |            |            |            |            |
+| 7         |  127,816μs |            |            |            |            |            |            |            |            |            |            |            |
 | 8         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
@@ -50,7 +50,7 @@ This table shows how much iterations it computes for about a second. The main fi
 | 4         |        300 |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |     20,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 6         |     50,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |            |            |            |            |            |            |            |            |            |            |            |            |
+| 7         |         10 |            |            |            |            |            |            |            |            |            |            |            |
 | 8         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
