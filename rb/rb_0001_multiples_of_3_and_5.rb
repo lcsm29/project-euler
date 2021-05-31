@@ -62,9 +62,9 @@ class Rb0001
     elapsed
   end
   
-  def main
+  def main0001
     n = 1000
-    n_iters = 2500
+    n_iters = 4000
     ans = 233168
     obj = Rb0001.new
     fn_names = 'inject', 'reduce', 'triple_sum', 'gauss_sum'
@@ -81,5 +81,5 @@ class Rb0001
     end
     {'fastest_avg': fastest_avg, 'n_iter': n_iters.to_i, 'num_failed': num_failed}
   end
-  main
+  main0001
   
