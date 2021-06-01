@@ -28,6 +28,15 @@ def fn_add_directly(n):
         if i % 3 == 0 or i % 5 == 0:
             total += i
     return total
+
+
+def fn_set(n):
+    s = set()
+    for i in range(3,n,3):
+        s.add(i)
+    for i in range(5,n,5):
+        s.add(i)
+    return sum(s)
 """
 
 def fn_triple_sum(n):
@@ -68,6 +77,7 @@ if __name__ == '__main__':
     # timed.caller(fn_short, n, i, prob_id)
     # timed.caller(fn_add_directly, n, i, prob_id)
     # timed.caller(fn_slower_than_short, n, i, prob_id)
+    # timed.caller(fn_set, n, i, prob_id)
     timed.caller(fn_triple_sum, n, i, prob_id)
     timed.caller(fn_triple_gauss_sum, n, i, prob_id)
     timed.caller(fn_g_sum_wo_def, n, i, prob_id)
