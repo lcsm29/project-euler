@@ -75,8 +75,8 @@ if __name__ == '__main__':
     i = 50_000
     prob_id = 1
     # timed.caller(fn_short, n, i, prob_id)
-    # timed.caller(fn_add_directly, n, i, prob_id)
     # timed.caller(fn_slower_than_short, n, i, prob_id)
+    # timed.caller(fn_add_directly, n, i, prob_id)
     # timed.caller(fn_set, n, i, prob_id)
     timed.caller(fn_triple_sum, n, i, prob_id)
     timed.caller(fn_triple_gauss_sum, n, i, prob_id)
