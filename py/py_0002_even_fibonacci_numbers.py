@@ -22,21 +22,27 @@ def fn_iterative(n):
         if b % 2 == 0:
             sum_even += b
 
-''' recursiv esolution added and then immediately removed due to its slow speed
-from functools import lru_cache
-import sys
-sys.setrecursionlimit(1000)
-@lru_cache
+
 def fn_recursive(n):
-    if n <= 1:
-        return 2
-    else:
-        return 4 * fn_recursive(n - 1) + fn_recursive(n - 2)
-'''
+    result = []
+    i = 1
+    for i in range(1, n):
+        tmp = fib_finder(i)
+        if tmp % 2 == 0:
+            result.append(tmp)
+        if tmp > n:
+            return sum([e for e in result if e % 2 == 0])
+
+
+def fib_finder(nth, computed = {0: 0, 1: 1}):
+    if nth not in computed:
+        computed[nth] = fib_finder(nth - 1, computed) + fib_finder(nth - 2, computed)
+    return computed[nth]
+
 
 if __name__ == '__main__':
     n = 4_000_000
-    i = 500_000
+    i = 150_000
     prob_id = 2
     timed.caller(fn_iterative, n, i, prob_id)
-    # timed.caller(fn_recursive, n, i, prob_id)
+    timed.caller(fn_recursive, n, i, prob_id)
