@@ -29,13 +29,13 @@ This section is not implemented yet, but it's for the speed comparison of each l
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |        859 |            |            |            |            |            |            |            |            |            |      1,043 |            |
-| 2         |      2,083 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |    316,030 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |    552,845 |            |            |            |            |            |            |            |            |            |            |            |
-| 5         |     52,374 |            |            |            |            |            |            |            |            |            |            |            |
-| 6         |        304 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |  127,816μs |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |        797 |            |            |            |            |            |            |            |            |            |      1,043 |            |
+| 2         |      2,096 |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |    315,448 |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |    577,857 |            |            |            |            |            |            |            |            |            |            |            |
+| 5         |     53,080 |            |            |            |            |            |            |            |            |            |            |            |
+| 6         |        303 |            |            |            |            |            |            |            |            |            |            |            |
+| 7         |  122,897μs |            |            |            |            |            |            |            |            |            |            |            |
 | 8         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
@@ -45,7 +45,7 @@ This table shows how much iterations it computes for about a second. The main fi
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
 | 1         |     50,000 |            |            |            |            |            |            |            |            |            |      4,000 |            |
-| 2         |    500,000 |            |            |            |            |            |            |            |            |            |            |            |
+| 2         |    150,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
 | 4         |        300 |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |     20,000 |            |            |            |            |            |            |            |            |            |            |            |
