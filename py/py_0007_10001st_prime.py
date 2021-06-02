@@ -7,8 +7,9 @@
 # 
 # by lcsm29 http://github.com/lcsm29/project-euler
 import timed
+from math import log
 
-
+''' removed due to its slow speed
 def fn_brute(n):
     assert n > 0, 'n should be greater than 0'
     assert type(n) == int, 'n should be an integer'
@@ -25,10 +26,34 @@ def fn_brute(n):
             elif div == sqrt:
                 primes_found += 1
     return i
+'''
 
+def fn_sieve_based(n):
+    def sieve(limit):
+        arr = [True] * (limit + 1)
+        i = 2
+        while i * i <= limit:
+            if arr[i]:
+                for np in range(i * i, limit + 1, i):
+                    arr[np] = False
+            i += 1
+        return arr
+    counter = -2
+    if n > 5:
+        limit = int(n * (log(n) + log(log(n))))
+    else:
+        limit = n
+    tf_table = sieve(limit)
+    for i, prime in enumerate(tf_table):
+        if prime:
+            counter += 1
+        if counter == n:
+            return i
+    
 
 if __name__ == '__main__':
     n = 10001
-    i = 10
+    i = 100
     prob_id = 7
-    timed.caller(fn_brute, n, i, prob_id)
+    # timed.caller(fn_brute, n, i, prob_id)
+    timed.caller(fn_sieve_based, n, i, prob_id)
