@@ -74,6 +74,21 @@ def scoreboard_updater(n, result_avg):
             copied *= 0.001
             counter += 1
         return f'{result_avg:11,.0f} ' if counter == 0 else f'{copied:9,.0f}' + prefix_dict[counter] + ' '
+
+    def position_finder(line, option):
+        found = 0
+        pos_before = 0
+        pos_after = 0
+        for i, c in enumerate(line):
+            if c == '|':
+                found += 1
+            if c == '|' and found == 2:
+                pos_before = i + 1
+            if c == '|' and found == 3:
+                pos_after = i
+        if option == 'before': return pos_before
+        if option == 'after': return pos_after
+
     target_iter, target_avg = 'Number of Iterations (', 'unless specified) (lower is better)'
     l_no_iter, l_no_avg = 0, 0
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
@@ -82,7 +97,21 @@ def scoreboard_updater(n, result_avg):
         if target_iter in line: l_no_iter = i + 3 + n
         if target_avg in line: l_no_avg = i + 3 + n
     if l_no_iter != 0 and l_no_avg != 0:
-        tmp[l_no_avg] = tmp[l_no_avg][:13] + conv() + tmp[l_no_avg][25:]
-        tmp[l_no_iter] = tmp[l_no_iter][:13] + f'{iters[n]:11,.0f} ' + tmp[l_no_iter][25:]
+        pos_bf = position_finder(tmp[l_no_avg], 'before')
+        pos_af = position_finder(tmp[l_no_avg], 'after')
+        tmp[l_no_avg] = (
+            tmp[l_no_avg][:pos_bf]
+            + '[' + conv() + ']'
+            + '(https://github.com/lcsm29/project-euler/blob/main/py/'
+            + file_names[n] + '.py)'
+            + tmp[l_no_avg][pos_af:]
+        )
+        pos_bf = position_finder(tmp[l_no_iter], 'before')
+        pos_af = position_finder(tmp[l_no_iter], 'after')
+        tmp[l_no_iter] = (
+            tmp[l_no_iter][:pos_bf]
+             + f'{iters[n]:11,.0f} '
+             + tmp[l_no_iter][pos_af:]
+        )
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)

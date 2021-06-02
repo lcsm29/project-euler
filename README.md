@@ -29,14 +29,14 @@ This section is not implemented yet, but it's for the speed comparison of each l
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |        783 |            |            |            |            |            |            |            |            |            |      1,043 |            |
-| 2         |      2,020 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |    307,101 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |    545,513 |            |            |            |            |            |            |            |            |            |            |            |
-| 5         |     50,641 |            |            |            |            |            |            |            |            |            |            |            |
-| 6         |        294 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |   10,233μs |            |            |            |            |            |            |            |            |            |            |            |
-| 8         |    1,661μs |            |            |            |            |            |            |            |            |            |            |            |
+| 1         |[        800 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0001_multiples_of_3_and_5.py)|            |            |            |            |            |            |            |            |            |      1,043 |            |
+| 2         |[      2,023 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0002_even_fibonacci_numbers.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 3         |[    307,434 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0003_largest_prime_factor.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 4         |[    548,254 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0004_largest_palindrome_product.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 5         |[     50,945 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0005_smallest_multiple.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 6         |[        302 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0006_sum_square_difference.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 7         |[   10,263μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0007_10001st_prime.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 8         |[    1,666μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
 
