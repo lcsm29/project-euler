@@ -1,7 +1,7 @@
 file_names = {
     1: 'py_0001_multiples_of_3_and_5',
-	2: 'py_0002_even_fibonacci_numbers',
-	3: 'py_0003_largest_prime_factor',
+    2: 'py_0002_even_fibonacci_numbers',
+    3: 'py_0003_largest_prime_factor',
     4: 'py_0004_largest_palindrome_product',
     5: 'py_0005_smallest_multiple',
     6: 'py_0006_sum_square_difference',
@@ -1515,7 +1515,6 @@ iters = {
 	6: 50_000,
 	7: 100,
 	8: 600,
-    # 
 }
 
 
