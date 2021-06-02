@@ -4,6 +4,8 @@ import sys
 import os
 import io
 import platform
+import subprocess
+import re
 from pathlib import Path
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
@@ -131,20 +133,32 @@ def line_finder(md_dump, num_id, option):
 
 
 def sysinfo_updater():
-        print('Writing system info to README.md...')
-        with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
-            tmp = f.readlines()
-        l_sysinfo = line_finder(tmp, 1, 'sysinfo')
-        oname = platform.system() + ' ' + platform.release()
-        ver = 'Python ' + '.'.join([str(c) for i, c in enumerate(sys.version_info) if i < 3])
-        try:
-            import cpuinfo
-            cpu_nf = cpuinfo.get_cpu_info()
-            ver = cpu_nf['python_version']
-            oname += ' (' + cpu_nf['arch'] + ')'
-            cpu = cpu_nf['brand_raw']
-        except (ModuleNotFoundError, AttributeError):
-            cpu = platform.processor()
-        tmp[l_sysinfo] = '  * py: ' + ver + ', ' + oname + ', ' + cpu + '\n'
-        with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
-            f.writelines(tmp)
+    def get_processor_name():
+        if platform.system() == 'Windows':
+            return platform.processor()
+        elif platform.system() == 'Darwin':
+            os.environ['PATH'] = os.environ['PATH'] + os.pathsep + '/usr/sbin'
+            command = "sysctl -n machdep.cpu.brand_string"
+            return subprocess.check_output(command).strip()
+        elif platform.system() == 'Linux':
+            command = "cat /proc/cpuinfo"
+            all_info = str(subprocess.check_output(command, shell=True))
+            for line in all_info.split('\\n'):
+                if "model name" in line:
+                    return re.sub(".*model name.*:", "", line, 1)
+    print('Writing system info to README.md...')
+    with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
+        tmp = f.readlines()
+    l_sysinfo = line_finder(tmp, 1, 'sysinfo')
+    oname = platform.system() + ' ' + platform.release() + ' (' + platform.machine() + ')'
+    ver = 'Python ' + platform.python_version()
+    try:
+        import cpuinfo
+        cpu_nf = cpuinfo.get_cpu_info()
+        ver = cpu_nf['python_version']
+        cpu = cpu_nf['brand_raw']
+    except (ModuleNotFoundError, AttributeError):
+        cpu = get_processor_name()
+    tmp[l_sysinfo] = '  * py: ' + ver + ', ' + oname + ', ' + cpu + '\n'
+    with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
+        f.writelines(tmp)
