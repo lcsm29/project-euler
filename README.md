@@ -29,18 +29,18 @@ This section hasn't been fully implemented yet. This is my attempt to compare th
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |[        800 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0001_multiples_of_3_and_5.py)|            |            |            |            |            |            |            |            |            |      1,043 |            |
-| 2         |[      2,059 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0002_even_fibonacci_numbers.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 3         |[    308,963 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0003_largest_prime_factor.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 4         |[    543,487 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0004_largest_palindrome_product.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 5         |[     50,757 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0005_smallest_multiple.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 6         |[        297 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0006_sum_square_difference.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 7         |[   10,171μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0007_10001st_prime.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 8         |[    1,663μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 1         |[        687 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0001_multiples_of_3_and_5.py)|            |            |            |            |            |            |            |            |            |      1,043 |            |
+| 2         |[      2,218 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0002_even_fibonacci_numbers.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 3         |[    313,884 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0003_largest_prime_factor.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 4         |[    531,239 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0004_largest_palindrome_product.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 5         |[     50,904 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0005_smallest_multiple.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 6         |[        221 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0006_sum_square_difference.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 7         |[    9,489μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0007_10001st_prime.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 8         |[    1,436μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
 * The table above is auto-generated from the following environments;
-  * py: 
+  * py: Python 3.9.4.final.0 (64 bit), macOS 11.4 (arm64), Apple M1
   * c: 
   * cpp: 
   * cs: 
@@ -57,13 +57,13 @@ This table shows how much nanoseconds it took for the fastest algo to complete o
 This table shows how much iterations it computes for about a second. The main file not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |     50,000 |            |            |            |            |            |            |            |            |            |      4,000 |            |
+| 1         |     65,000 |            |            |            |            |            |            |            |            |            |      4,000 |            |
 | 2         |    150,000 |            |            |            |            |            |            |            |            |            |            |            |
 | 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |        300 |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |        450 |            |            |            |            |            |            |            |            |            |            |            |
 | 5         |     20,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 6         |     50,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |        100 |            |            |            |            |            |            |            |            |            |            |            |
-| 8         |        600 |            |            |            |            |            |            |            |            |            |            |            |
+| 6         |     41,000 |            |            |            |            |            |            |            |            |            |            |            |
+| 7         |        110 |            |            |            |            |            |            |            |            |            |            |            |
+| 8         |        700 |            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
