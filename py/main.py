@@ -38,9 +38,12 @@ def comparo(result, idx):
             if max(slowest[key][0], ns[i]) == ns[i]:
                 slowest[key] = [ns[i], func]
     for f, s in zip(fastest.items(), slowest.items()):
+        try:
+            mult = f' ({s[1][0]/f[1][0]:.2f}x)'
+        except ZeroDivisionError:
+            mult = ''
         print(f'fastest {f[0]}: {f[1][1]} took {f[1][0]:,.0f}ns')
-        print(f'slowest {s[0]}: {s[1][1]} took {s[1][0]:,.0f}ns'
-              f' ({s[1][0]/f[1][0]:.2f}x)')
+        print(f'slowest {s[0]}: {s[1][1]} took {s[1][0]:,.0f}ns{mult}')
     scoreboard_updater(idx, fastest['avg'][0])
 
 
