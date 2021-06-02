@@ -137,25 +137,31 @@ def sysinfo_updater():
         if platform.system() == 'Windows':
             return platform.processor()
         elif platform.system() == 'Darwin':
-            os.environ['PATH'] = os.environ['PATH'] + os.pathsep + '/usr/sbin'
-            command = "sysctl -n machdep.cpu.brand_string"
-            return subprocess.check_output(command).strip()
+            command = 'sysctl -n machdep.cpu.brand_string'
+            return str(subprocess.check_output(command, shell=True))[2:-3]
         elif platform.system() == 'Linux':
-            command = "cat /proc/cpuinfo"
+            command = 'cat /proc/cpuinfo'
             all_info = str(subprocess.check_output(command, shell=True))
             for line in all_info.split('\\n'):
-                if "model name" in line:
-                    return re.sub(".*model name.*:", "", line, 1)
+                if 'model name' in line:
+                    return re.sub('.*model name.*:', '', line, 1)
+
+    def get_oname():
+        if platform.system() in ('Windows', 'Linux'):
+            return platform.system() + ' ' + platform.release() + ' (' + platform.machine() + ')'
+        if platform.system() == 'Darwin':
+            return 'macOS ' + platform.mac_ver()[0] + ' (' + platform.machine() + ')'
+
     print('Writing system info to README.md...')
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
         tmp = f.readlines()
     l_sysinfo = line_finder(tmp, 1, 'sysinfo')
-    oname = platform.system() + ' ' + platform.release() + ' (' + platform.machine() + ')'
+    oname = get_oname()
     ver = 'Python ' + platform.python_version()
     try:
         import cpuinfo
         cpu_nf = cpuinfo.get_cpu_info()
-        ver = cpu_nf['python_version']
+        ver = 'Python ' + cpu_nf['python_version']
         cpu = cpu_nf['brand_raw']
     except (ModuleNotFoundError, AttributeError):
         cpu = get_processor_name()
