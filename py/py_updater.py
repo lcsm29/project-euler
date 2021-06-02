@@ -75,10 +75,8 @@ def scoreboard_updater(n, result_avg):
             counter += 1
         return f'{result_avg:11,.0f} ' if counter == 0 else f'{copied:9,.0f}' + prefix_dict[counter] + ' '
 
-    def position_finder(line, option):
+    def pos_finder(line, option):
         found = 0
-        pos_before = 0
-        pos_after = 0
         for i, c in enumerate(line):
             if c == '|':
                 found += 1
@@ -86,32 +84,41 @@ def scoreboard_updater(n, result_avg):
                 pos_before = i + 1
             if c == '|' and found == 3:
                 pos_after = i
-        if option == 'before': return pos_before
-        if option == 'after': return pos_after
+                if option == 'before': return pos_before
+                if option == 'after': return pos_after
+    
+    def line_finder(md_dump, option):
+        target_a = 'unless specified) (lower is better)'
+        target_i = 'Number of Iterations ('
+        for i, line in enumerate(md_dump):
+            if target_a in line: head_avg = i
+            if target_i in line: head_iter = i
+        if option == 'avg': 
+            for i in range(head_avg, head_iter):
+                if md_dump[i].startswith('| ' + str(n) + ' '):
+                    return i
+            return 0
+        if option == 'iter':
+            for i in range(head_iter, len(md_dump)):
+                if md_dump[i].startswith('| ' + str(n) + ' '):
+                    return i
+            return 0
 
-    target_iter, target_avg = 'Number of Iterations (', 'unless specified) (lower is better)'
-    l_no_iter, l_no_avg = 0, 0
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
         tmp = f.readlines()
-    for i, line in enumerate(tmp):
-        if target_iter in line: l_no_iter = i + 3 + n
-        if target_avg in line: l_no_avg = i + 3 + n
+    l_no_avg, l_no_iter = line_finder(tmp, 'avg'), line_finder(tmp, 'iter')
     if l_no_iter != 0 and l_no_avg != 0:
-        pos_bf = position_finder(tmp[l_no_avg], 'before')
-        pos_af = position_finder(tmp[l_no_avg], 'after')
         tmp[l_no_avg] = (
-            tmp[l_no_avg][:pos_bf]
+            tmp[l_no_avg][:pos_finder(tmp[l_no_avg], 'before')]
             + '[' + conv() + ']'
             + '(https://github.com/lcsm29/project-euler/blob/main/py/'
             + file_names[n] + '.py)'
-            + tmp[l_no_avg][pos_af:]
+            + tmp[l_no_avg][pos_finder(tmp[l_no_avg], 'after'):]
         )
-        pos_bf = position_finder(tmp[l_no_iter], 'before')
-        pos_af = position_finder(tmp[l_no_iter], 'after')
         tmp[l_no_iter] = (
-            tmp[l_no_iter][:pos_bf]
+            tmp[l_no_iter][:pos_finder(tmp[l_no_iter], 'before')]
              + f'{iters[n]:11,.0f} '
-             + tmp[l_no_iter][pos_af:]
+             + tmp[l_no_iter][pos_finder(tmp[l_no_iter], 'after'):]
         )
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)
