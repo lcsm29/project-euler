@@ -72,7 +72,7 @@ def gauss_sum(num, n):
 
 if __name__ == '__main__':
     n = 1_000
-    i = 50_000
+    i = 65_000
     prob_id = 1
     # timed.caller(fn_short, n, i, prob_id)
     # timed.caller(fn_slower_than_short, n, i, prob_id)

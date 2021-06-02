@@ -84,7 +84,7 @@ def fn_sieve_sundaram(n):
 
 if __name__ == '__main__':
     n = 10001
-    i = 100
+    i = 110
     prob_id = 7
     # timed.caller(fn_brute, n, i, prob_id)
     timed.caller(fn_sieve_eratosthenes, n, i, prob_id)

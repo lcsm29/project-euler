@@ -43,7 +43,7 @@ def fn_fast_pal(n):
 
 if __name__ == '__main__':
     n = 999
-    i = 300
+    i = 400
     prob_id = 4
     timed.caller(fn_brute_tuned, n, i, prob_id)
     timed.caller(fn_fast_pal, n, i, prob_id)

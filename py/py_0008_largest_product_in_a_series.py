@@ -41,8 +41,8 @@ def fn_brute(n):
         # tmp = reduce(operator.mul, [int(c) for c in kdigit[i:i + n]], 1)
         # the above was removed because it's slower than the following
         tmp = 1  
-        for i in [int(c) for c in kdigit[i:i + n]]:  
-            tmp *= i
+        for j in [int(c) for c in kdigit[i:i + n]]:  
+            tmp *= j
         if max(g_product, tmp) == tmp:
             g_product = tmp
     return g_product
@@ -74,6 +74,6 @@ kdigit = (
 
 if __name__ == '__main__':
     n = 13
-    i = 600
+    i = 700
     prob_id = 8
     timed.caller(fn_brute, n, i, prob_id)
