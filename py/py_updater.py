@@ -1,8 +1,9 @@
 from py_data import file_names, iters
 import glob
 import sys
-import io
 import os
+import io
+import platform
 from pathlib import Path
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
@@ -85,28 +86,12 @@ def scoreboard_updater(n, result_avg):
             if c == '|' and found == 3:
                 pos_after = i
                 if option == 'before': return pos_before
-                if option == 'after': return pos_after
-    
-    def line_finder(md_dump, option):
-        target_a = 'unless specified) (lower is better)'
-        target_i = 'Number of Iterations ('
-        for i, line in enumerate(md_dump):
-            if target_a in line: head_avg = i
-            if target_i in line: head_iter = i
-        if option == 'avg': 
-            for i in range(head_avg, head_iter):
-                if md_dump[i].startswith('| ' + str(n) + ' '):
-                    return i
-            return 0
-        if option == 'iter':
-            for i in range(head_iter, len(md_dump)):
-                if md_dump[i].startswith('| ' + str(n) + ' '):
-                    return i
-            return 0
+                if option == 'after': return pos_after    
 
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
         tmp = f.readlines()
-    l_no_avg, l_no_iter = line_finder(tmp, 'avg'), line_finder(tmp, 'iter')
+    l_no_avg = line_finder(tmp, n, 'avg')
+    l_no_iter = line_finder(tmp, n, 'iter')
     if l_no_iter != 0 and l_no_avg != 0:
         tmp[l_no_avg] = (
             tmp[l_no_avg][:pos_finder(tmp[l_no_avg], 'before')]
@@ -120,5 +105,46 @@ def scoreboard_updater(n, result_avg):
              + f'{iters[n]:11,.0f} '
              + tmp[l_no_iter][pos_finder(tmp[l_no_iter], 'after'):]
         )
+        with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
+            f.writelines(tmp)
+
+
+def line_finder(md_dump, num_id, option):
+    target_a = 'unless specified) (lower is better)'
+    target_i = 'Number of Iterations ('
+    for i, line in enumerate(md_dump):
+        if target_a in line: head_avg = i
+        if target_i in line: head_iter = i
+    if option in ('avg', 'sysinfo'):
+        target_line = 0
+        for i in range(head_avg, head_iter):
+            if md_dump[i].startswith('| ' + str(num_id) + ' '):
+                target_line = i
+            if md_dump[i].startswith('  * py: '):
+                target_sysinfo = i
+        return target_line if option == 'avg' else target_sysinfo
+    if option == 'iter':
+        for i in range(head_iter, len(md_dump)):
+            if md_dump[i].startswith('| ' + str(num_id) + ' '):
+                return i
+        return 0
+
+
+def sysinfo_updater():
+        print('Writing system info to README.md...')
+        with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
+            tmp = f.readlines()
+        l_sysinfo = line_finder(tmp, 1, 'sysinfo')
+        oname = platform.system() + ' ' + platform.release()
+        ver = 'Python ' + '.'.join([str(c) for i, c in enumerate(sys.version_info) if i < 3])
+        try:
+            import cpuinfo
+            cpu_nf = cpuinfo.get_cpu_info()
+            ver = cpu_nf['python_version']
+            oname += ' (' + cpu_nf['arch'] + ')'
+            cpu = cpu_nf['brand_raw']
+        except (ModuleNotFoundError, AttributeError):
+            cpu = platform.processor()
+        tmp[l_sysinfo] = '  * py: ' + ver + ', ' + oname + ', ' + cpu + '\n'
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)

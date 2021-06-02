@@ -2,7 +2,7 @@ import statistics as stat
 import time
 import importlib
 from py_data import *
-from py_updater import readme_updater, scoreboard_updater
+from py_updater import readme_updater, scoreboard_updater, sysinfo_updater
 
 
 def call_everything(i, *var):
@@ -74,3 +74,4 @@ if __name__ == '__main__':
     else:
         print(f"0/{num_fn} function failed")
     readme_updater()
+    sysinfo_updater()
