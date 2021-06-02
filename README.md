@@ -23,7 +23,7 @@ Main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-eule
 
 
 ## Scoreboard
-This section is not implemented yet, but it's for the speed comparison of each languages.
+This section hasn't been fully implemented yet. This is my attempt to compare the crunching speed of each language, but there are many limitations. The first and foremost limitation would be: each implementation of each language may use slightly different algorithms (or substantially different one in some cases), due to various reasons, including the differences in features, data types, or styles of each language, my own limited capability, et cetera. Also, each language may have a varying degree of optimization. As such, this is more like the comparison between apple and orange, rather than apple to apple comparison.
 
 ### Average execution time (in nanoseconds, unless specified) (lower is better)
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
@@ -39,6 +39,19 @@ This table shows how much nanoseconds it took for the fastest algo to complete o
 | 8         |[    1,663μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
 | 9         |            |            |            |            |            |            |            |            |            |            |            |            |
 | 10        |            |            |            |            |            |            |            |            |            |            |            |            |
+* The table above is auto-generated from the following environments;
+  * py: 
+  * c: 
+  * cpp: 
+  * cs: 
+  * fs: 
+  * go: 
+  * hs: 
+  * java: 
+  * js: 
+  * php: 
+  * rb: 
+  * sql: 
 
 ### Number of Iterations (higher is better)
 This table shows how much iterations it computes for about a second. The main file not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
