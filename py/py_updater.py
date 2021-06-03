@@ -109,9 +109,30 @@ def scoreboard_updater(n, result_avg):
         )
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)
+    if l_no_avg == 0 and l_no_iter == 0:
+        last_avg = line_finder(tmp, n, 'avg', True)
+        new = tmp[:last_avg + 1] + [tmp[last_avg]] + tmp[last_avg + 1:]
+        if int(tmp[last_avg][2:8]) < n:
+            new[last_avg + 1] = (
+                '| ' + str(n).ljust(10, ' ') + '|'
+                + '[' + conv() + ']'
+                + '(https://github.com/lcsm29/project-euler/blob/main/py/'
+                + file_names[n] + '.py)'
+                + new[last_avg][pos_finder(new[last_avg], 'after'):]
+            )
+        last_iter = line_finder(new, n, 'iter', True)
+        if int(new[last_iter][2:8]) < n:
+            new = new[:last_iter + 1] + [new[last_iter]] + new[last_iter + 1:]
+            new[last_iter + 1] = (
+                '| ' + str(n).ljust(10, ' ') + '|'
+                + f'{iters[n]:11,.0f} '
+                + new[last_iter][pos_finder(new[last_iter], 'after'):]
+            )
+        with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
+            f.writelines(new)
 
 
-def line_finder(md_dump, num_id, option):
+def line_finder(md_dump, num_id, option, eot=False):
     target_a = 'unless specified) (lower is better)'
     target_i = 'Number of Iterations ('
     for i, line in enumerate(md_dump):
@@ -124,12 +145,18 @@ def line_finder(md_dump, num_id, option):
                 target_line = i
             if md_dump[i].startswith('  * py: '):
                 target_sysinfo = i
+            if md_dump[i].startswith('* The table ab') and eot:
+                target_line = i - 1
         return target_line if option == 'avg' else target_sysinfo
-    if option == 'iter':
+    if option == 'iter' and eot == False:
         for i in range(head_iter, len(md_dump)):
             if md_dump[i].startswith('| ' + str(num_id) + ' '):
                 return i
         return 0
+    if option == 'iter' and eot:
+        for i in range(head_iter, len(md_dump)):
+            if md_dump[i].startswith('* Each main script not just'):
+                return i - 1
 
 
 def sysinfo_updater():
