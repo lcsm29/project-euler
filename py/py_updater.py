@@ -64,7 +64,7 @@ def readme_updater():
         tmp = md.readlines()
     for i, line in enumerate(tmp):
         if line.startswith(target):
-            tmp[i] = '{} {} / 747           |\n'.format(target, len(file_names.keys()))
+            tmp[i] = '{} {:6} / 747      |\n'.format(target, len(file_names.keys()))
     with open(get_readme_path(), 'w') as md:
         md.writelines(tmp)
 
