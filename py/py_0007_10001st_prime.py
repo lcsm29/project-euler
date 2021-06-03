@@ -33,6 +33,7 @@ def fn_sieve_eratosthenes(n):
     assert type(n) == int, 'n should be an integer'
     def eratosthenes(limit):
         arr = [True] * (limit + 1)
+        arr[0] = arr[1] = False
         i = 2
         while i * i <= limit:
             if arr[i]:
@@ -47,7 +48,7 @@ def fn_sieve_eratosthenes(n):
     else:
         limit = int(n * (log(n) + log(log(n))))
     tf_table = eratosthenes(limit)
-    counter = -2
+    counter = 0
     for i, prime in enumerate(tf_table):
         if prime:
             counter += 1
