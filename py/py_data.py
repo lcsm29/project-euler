@@ -7,8 +7,8 @@ file_names = {
     6: 'py_0006_sum_square_difference',
     7: 'py_0007_10001st_prime',
     8: 'py_0008_largest_product_in_a_series',
-#    9: 'py_0009_special_pythagorean_triplet',
-#    10: 'py_0010_summation_of_primes',
+    9: 'py_0009_special_pythagorean_triplet',
+    10: 'py_0010_summation_of_primes',
 #    11: 'py_0011_largest_product_in_a_grid',
 #    12: 'py_0012_highly_divisible_triangular_number',
 #    13: 'py_0013_large_sum',
@@ -745,8 +745,8 @@ ans = {
 	6: 25_164_150,
 	7: 104_743,
 	8: 23_514_624_000,
-    # 9: 31875000,
-    # 10: 142913828922,
+    9: 31_875_000,
+    10: 142_913_828_922,
     # 11: 70600674,
     # 12: 76576500,
     # 13: 5537376230,
@@ -1504,6 +1504,8 @@ var = {
 	6: 100,
 	7: 10_001,
 	8: 13,
+    9: 1000,
+    10: 2_000_000,
 }
 
 iters = {
@@ -1515,6 +1517,8 @@ iters = {
 	6: 40_000,
 	7: 110,
 	8: 700,
+    9: 50,
+    10: 6,
 }
 
 
