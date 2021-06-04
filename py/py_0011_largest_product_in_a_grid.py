@@ -85,6 +85,6 @@ str_grid = (
 
 if __name__ == '__main__':
     n = 4
-    i = 1100
+    i = 1_250
     prob_id = 11
     timed.caller(fn_brute, n, i, prob_id)

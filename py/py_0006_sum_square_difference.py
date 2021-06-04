@@ -25,7 +25,7 @@ def fn_math_based(n):
 
 if __name__ == '__main__':
     n = 100
-    i = 40000
+    i = 44_000
     prob_id = 6
     timed.caller(fn_short, n, i, prob_id)
     timed.caller(fn_math_based, n, i, prob_id)
