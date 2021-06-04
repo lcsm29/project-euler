@@ -41,7 +41,7 @@ def fn_brute(n):
         # tmp = reduce(operator.mul, [int(c) for c in kdigit[i:i + n]], 1)
         # the above was removed because it's slower than the following
         tmp = 1  
-        for j in [int(c) for c in kdigit[i:i + n]]:  
+        for j in [int(c) for c in kdigit[i:i + n]]:
             tmp *= j
         if max(g_product, tmp) == tmp:
             g_product = tmp
