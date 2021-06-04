@@ -9,7 +9,7 @@ file_names = {
     8: 'py_0008_largest_product_in_a_series',
     9: 'py_0009_special_pythagorean_triplet',
     10: 'py_0010_summation_of_primes',
-#    11: 'py_0011_largest_product_in_a_grid',
+    11: 'py_0011_largest_product_in_a_grid',
 #    12: 'py_0012_highly_divisible_triangular_number',
 #    13: 'py_0013_large_sum',
 #    14: 'py_0014_longest_collatz_sequence',
@@ -747,7 +747,7 @@ ans = {
 	8: 23_514_624_000,
     9: 31_875_000,
     10: 142_913_828_922,
-    # 11: 70600674,
+    11: 70_600_674,
     # 12: 76576500,
     # 13: 5537376230,
     # 14: 837799,
@@ -1504,8 +1504,9 @@ var = {
 	6: 100,
 	7: 10_001,
 	8: 13,
-    9: 1000,
+    9: 1_000,
     10: 2_000_000,
+    11: 4,
 }
 
 iters = {
@@ -1519,6 +1520,7 @@ iters = {
 	8: 700,
     9: 50,
     10: 6,
+    11: 1_100,
 }
 
 

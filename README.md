@@ -8,7 +8,7 @@ Main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-eule
 ## Current Progress
 | Languages                                                                      |     Progress      |
 | ------------------------------------------------------------------------------ | ----------------- |
-| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 |     10 / 747      |
+| [Python](https://github.com/lcsm29/project-euler/tree/main/py)                 |     11 / 747      |
 | [C](https://github.com/lcsm29/project-euler/tree/main/c)                       |      0 / 747      |
 | [C++](https://github.com/lcsm29/project-euler/tree/main/cpp)                   |      0 / 747      |
 | [C#](https://github.com/lcsm29/project-euler/tree/main/cs)                     |      0 / 747      |
@@ -29,19 +29,19 @@ This section hasn't been fully implemented yet. This is my attempt to compare th
 This table shows how much nanoseconds it took for the fastest algo to complete one iteration on average. I haven't implemented the auto-update feature yet (except for Python), but once implemented, running main files on each folder (e.g. [main.py](https://github.com/lcsm29/project-euler/blob/main/py/main.py)) will trigger the automatic update of this table.
 | Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |[        684 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0001_multiples_of_3_and_5.py)|            |            |            |            |            |            |            |            |            |        994 |            |
-| 2         |[      2,216 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0002_even_fibonacci_numbers.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 3         |[    313,368 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0003_largest_prime_factor.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 4         |[    528,038 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0004_largest_palindrome_product.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 5         |[     50,804 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0005_smallest_multiple.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 6         |[        233 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0006_sum_square_difference.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 7         |[    9,462μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0007_10001st_prime.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 8         |[    1,445μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 9         |[   20,906μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0009_special_pythagorean_triplet.py)|            |            |            |            |            |            |            |            |            |            |            |
-| 10        |[  170,297μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0010_summation_of_primes.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 1         |[        791 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0001_multiples_of_3_and_5.py)|            |            |            |            |            |            |            |            |            |        982 |            |
+| 2         |[      2,072 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0002_even_fibonacci_numbers.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 3         |[    308,428 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0003_largest_prime_factor.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 4         |[    559,610 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0004_largest_palindrome_product.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 5         |[     50,918 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0005_smallest_multiple.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 6         |[        302 ](https://github.com/lcsm29/project-euler/blob/main/py/py_0006_sum_square_difference.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 7         |[   10,452μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0007_10001st_prime.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 8         |[    1,684μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0008_largest_product_in_a_series.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 9         |[   16,067μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0009_special_pythagorean_triplet.py)|            |            |            |            |            |            |            |            |            |            |            |
+| 10        |[  254,687μs ](https://github.com/lcsm29/project-euler/blob/main/py/py_0010_summation_of_primes.py)|            |            |            |            |            |            |            |            |            |            |            |
 * The table above is auto-generated from the following environments;
-  * py: Python 3.9.4.final.0 (64 bit), macOS 11.4 (arm64), Apple M1
-  * rb: Ruby 3.0.1p64, Windows 10 Pro (x86_64), Intel Core i7-9700K
+  * py: Python 3.9.4.final.0 (64 bit), Windows 10 Professional (AMD64), Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz
+  * rb: Ruby 3.0.1p64, Windows 10 Professional (AMD64), Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz
 
 ### Number of Iterations (higher is better)
 This table shows how much iterations it computes for about a second. The main file not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
