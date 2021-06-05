@@ -60,32 +60,29 @@ def fn_pfactor_based_brute(n): # this one is also too slow but it's the best one
                 factors.append(prime)
         return factors
 
-    def get_combs(factors_lst):
-        if len(factors_lst) == 0:
-            return [[]]
-        combinations = []
-        for c in get_combs(factors_lst[1:]):
-            combinations += [c, c + [factors_lst[0]]]
-        return combinations
-
-    def count_divs(combs_lst):
-        dup_removed = []
-        for l in combs_lst[1:]:
-            if l not in dup_removed:
-                dup_removed.append(l)
-        return len(dup_removed) + 1
+    def count_divs(factors):
+        f_dict = {}
+        for factor in factors:
+            if factor in f_dict:
+                f_dict[factor] += 1
+            else:
+                f_dict[factor] = 1
+        plus_one_prod = 1
+        for exp in f_dict.values():
+            plus_one_prod *= (exp + 1)
+        return plus_one_prod
     
     num_divs, i = 2, 1
     while num_divs <= n:
         i += 1
         triangle = int(0.5 * i * (i + 1))
-        num_divs = count_divs(get_combs(get_prime_factors(triangle)))
+        num_divs = count_divs(get_prime_factors(triangle))
     return triangle
     
 
 if __name__ == '__main__':
     n = 500
-    i = 1
+    i = 6
     prob_id = 12
     # timed.caller(fn_brute, n, i, prob_id)
     timed.caller(fn_pfactor_based_brute, n, i, prob_id)
