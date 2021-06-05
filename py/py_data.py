@@ -11,7 +11,7 @@ file_names = {
     10: 'py_0010_summation_of_primes',
     11: 'py_0011_largest_product_in_a_grid',
     12: 'py_0012_highly_divisible_triangular_number',
-#    13: 'py_0013_large_sum',
+    13: 'py_0013_large_sum',
 #    14: 'py_0014_longest_collatz_sequence',
 #    15: 'py_0015_lattice_paths',
 #    16: 'py_0016_power_digit_sum',
@@ -749,7 +749,7 @@ ans = {
     10: 142_913_828_922,
     11: 70_600_674,
     12: 76_576_500,
-    # 13: 5537376230,
+    13: 5_537_376_230,
     # 14: 837799,
     # 15: 137846528820,
     # 16: 1366,
@@ -1507,7 +1507,8 @@ var = {
     9: 1_000,
     10: 2_000_000,
     11: 4,
-    12: 500
+    12: 500,
+    13: 10,
 }
 
 iters = {
@@ -1523,6 +1524,7 @@ iters = {
     10: 6,
     11: 1_250,
     12: 1,
+    13: 20_000,
 }
 
 
