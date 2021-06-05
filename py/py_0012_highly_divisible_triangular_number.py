@@ -19,35 +19,19 @@
 # What is the value of the first triangle number to have over 500 divisors?
 # 
 # by lcsm29 http://github.com/lcsm29/project-euler
-from time import perf_counter_ns
 import timed
 from math import sqrt
+import random
 
-''' removed immediately because it is too slow
-def fn_brute(n):
-    assert n >= 2
-    num_divs, i = 2, 1
-    while num_divs <= n:
-        i += 1
-        triangle = int(0.5 * i * (i + 1))
-        tmp_divs = 2
-        for j in range(2, triangle // 2 + 1):
-            if triangle % j == 0:
-                tmp_divs += 1
-        if tmp_divs > num_divs:
-            num_divs = tmp_divs
-    return int(0.5 * i * (i + 1))
-'''
 
-def fn_pfactor_based_brute(n): # this one is also too slow but it's the best one atm
+def fn_brute_based_on_pfactor(n): # this one is also too slow but it's the best one atm
     assert n > 1, 'n should be greater than 1'
     assert type(n) == int, 'n should be an integer'
 
     def get_smallest_prime(num):
-        smallest = float('inf')
-        for i in range(2, int(sqrt(num)) + 2):
+        for i in range(2, int(sqrt(num)) + 1):
             if num % i == 0:
-                return min(smallest, i)
+                return i
         return num
 
     def get_prime_factors(num):
@@ -61,28 +45,20 @@ def fn_pfactor_based_brute(n): # this one is also too slow but it's the best one
         return factors
 
     def count_divs(factors):
-        f_dict = {}
-        for factor in factors:
-            if factor in f_dict:
-                f_dict[factor] += 1
-            else:
-                f_dict[factor] = 1
-        plus_one_prod = 1
-        for exp in f_dict.values():
-            plus_one_prod *= (exp + 1)
-        return plus_one_prod
+        count = 1
+        for exp in [factors.count(exp) + 1 for exp in set(factors)]:
+            count *= exp
+        return count
     
-    num_divs, i = 2, 1
+    num_divs, triangle = 2, 1
     while num_divs <= n:
-        i += 1
-        triangle = int(0.5 * i * (i + 1))
+        triangle += (1+ int(sqrt(1 + (8 * triangle)))) // 2
         num_divs = count_divs(get_prime_factors(triangle))
     return triangle
-    
+
 
 if __name__ == '__main__':
     n = 500
     i = 6
     prob_id = 12
-    # timed.caller(fn_brute, n, i, prob_id)
-    timed.caller(fn_pfactor_based_brute, n, i, prob_id)
+    timed.caller(fn_brute_based_on_pfactor, n, i, prob_id)
