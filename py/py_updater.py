@@ -209,6 +209,8 @@ def sysinfo_updater(target_row='py'):
         l_sysinfo += 1
     oname = get_sys_name('os')
     ver = 'Python ' + platform.python_version()
+    if target_row == 'pypy':
+        ver = sys.version.split('\n')[1].strip('[]')
     try:
         import cpuinfo
         cpu_nf = cpuinfo.get_cpu_info()
