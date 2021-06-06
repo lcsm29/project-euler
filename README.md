@@ -47,17 +47,17 @@ This table shows how much nanoseconds it took for the fastest algo to complete o
 
 ### Number of Iterations (higher is better)
 This table shows how much iterations it computes for about a second.
-| Problems  | py         | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
-| --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 1         |     65,000 |            |            |            |            |            |            |            |            |            |      4,000 |            |
-| 2         |    150,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |
-| 4         |        420 |            |            |            |            |            |            |            |            |            |            |            |
-| 5         |     20,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 6         |     44,000 |            |            |            |            |            |            |            |            |            |            |            |
-| 7         |        110 |            |            |            |            |            |            |            |            |            |            |            |
-| 8         |        700 |            |            |            |            |            |            |            |            |            |            |            |
-| 9         |         50 |            |            |            |            |            |            |            |            |            |            |            |
-| 10        |          6 |            |            |            |            |            |            |            |            |            |            |            |
-| 11        |      1,250 |            |            |            |            |            |            |            |            |            |            |            |
+| Problems  | py         | pypy       | c          | cpp        | cs         | fs         | go         | hs         | java       | js         | php        | rb         | sql        |
+| --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
+| 1         |     65,000 |            |            |            |            |            |            |            |            |            |            |      4,000 |            |
+| 2         |    150,000 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 3         |      1,500 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 4         |        420 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 5         |     20,000 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 6         |     44,000 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 7         |        110 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 8         |        700 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 9         |         50 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 10        |          6 |            |            |            |            |            |            |            |            |            |            |            |            |
+| 11        |      1,250 |            |            |            |            |            |            |            |            |            |            |            |            |
 * Each main script not just runs the fastest algo, but runs every implementations. Thus, doing poorly on some algo could hamper the result greatly, even if the language is pretty fast on most implementations.
