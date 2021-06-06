@@ -69,7 +69,7 @@ def readme_updater():
         md.writelines(tmp)
 
 
-def scoreboard_updater(n, result_avg):
+def scoreboard_updater(n, result_avg, target_col='py'):
     def conv():
         prefix_dict = {0: 'ns', 1: 'μs', 2: 'ms', 3: ' s'}
         copied, counter = result_avg, 0
@@ -80,12 +80,16 @@ def scoreboard_updater(n, result_avg):
 
     def pos_finder(line, option):
         found = 0
+        if target_col == 'py':
+            target = 2
+        if target_col == 'pypy':
+            target = 3
         for i, c in enumerate(line):
             if c == '|':
                 found += 1
-            if c == '|' and found == 2:
+            if c == '|' and found == target:
                 pos_before = i + 1
-            if c == '|' and found == 3:
+            if c == '|' and found == target + 1:
                 pos_after = i
                 if option == 'before': return pos_before
                 if option == 'after': return pos_after    
@@ -159,7 +163,7 @@ def line_finder(md_dump, num_id, option, eot=False):
                 return i - 1
 
 
-def sysinfo_updater():
+def sysinfo_updater(target_row='py'):
     def get_sys_name(option = 'processor'):
         if platform.system() == 'Linux':
             command = 'cat /proc/cpuinfo'
@@ -191,6 +195,8 @@ def sysinfo_updater():
     with io.open(get_readme_path(), 'r', encoding='utf-8') as f:
         tmp = f.readlines()
     l_sysinfo = line_finder(tmp, 1, 'sysinfo')
+    if target_row == 'pypy':
+        l_sysinfo += 1
     oname = get_sys_name('os')
     ver = 'Python ' + platform.python_version()
     try:
