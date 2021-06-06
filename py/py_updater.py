@@ -216,6 +216,6 @@ def sysinfo_updater(target_row='py'):
         cpu = cpu_nf['brand_raw']
     except (ModuleNotFoundError, AttributeError):
         cpu = get_sys_name('processor')
-    tmp[l_sysinfo] = '  * py: ' + ver + ', ' + oname + ', ' + cpu + '\n'
+    tmp[l_sysinfo] = f'  * {target_row}: ' + ver + ', ' + oname + ', ' + cpu + '\n'
     with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
         f.writelines(tmp)

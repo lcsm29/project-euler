@@ -1530,22 +1530,25 @@ iters = {
 }
 
 pypy_iters = {
-	1: 260_000,
-	2: 490_000,
-	3: 11_000,
-	4: 1_800,
+	1: 300_000,
+	2: 520_000,
+	3: 12_200,
+	4: 2_000,
 	5: 60_000,
-	6: 520_000,
-	7: 500,
-	8: 6_200,
-    9: 8_300,
-    10: 23,
-    11: 5_500,
-    12: 11,
+	6: 570_000,
+	7: 550,
+	8: 7_000,
+    9: 17_000,
+    10: 24,
+    11: 8_100,
+    12: 20,
     13: 9_000,
     14: 2,
 }
 
 
-def get_iters(index, seconds):
-	return int(iters[index] * seconds)
+def get_iters(index, seconds, option='py'):
+    if option == 'pypy':
+        return int(pypy_iters[index] * seconds)
+    else:
+	    return int(iters[index] * seconds)

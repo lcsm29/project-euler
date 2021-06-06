@@ -64,7 +64,7 @@ if __name__ == '__main__':
     num_fn = 0
     second_per_sol = 1
     for i in file_names.keys():
-        iters = get_iters(i, second_per_sol)
+        iters = get_iters(i, second_per_sol, 'pypy')
         print(f'Calculating Project Euler ID {i} ({iters:,} times): ')
         funcs = importlib.import_module(file_names[i], package=None)
         comparo(call_everything(iters, var[i]), i)
