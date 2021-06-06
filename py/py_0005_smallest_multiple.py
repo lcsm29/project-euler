@@ -8,7 +8,6 @@
 # 
 # by lcsm29 http://github.com/lcsm29/project-euler
 import timed
-from math import prod
 
 ''' removed beceause it is too slow
 def fn_brute(n):
@@ -38,7 +37,10 @@ def fn_prime_based(n):
         for k, v in get_prime_factors(i).items():
             if factors[k] < v:
                 factors[k] = v
-    return prod([k ** v for k, v in factors.items() if v != 0])
+    prod = 1
+    for elem in [k ** v for k, v in factors.items() if v != 0]:
+        prod *= elem
+    return prod
 
 if __name__ == '__main__':
     n = 20
