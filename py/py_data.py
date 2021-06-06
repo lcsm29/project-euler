@@ -13,7 +13,7 @@ file_names = {
     12: 'py_0012_highly_divisible_triangular_number',
     13: 'py_0013_large_sum',
     14: 'py_0014_longest_collatz_sequence',
-#    15: 'py_0015_lattice_paths',
+    15: 'py_0015_lattice_paths',
 #    16: 'py_0016_power_digit_sum',
 #    17: 'py_0017_number_letter_counts',
 #    18: 'py_0018_maximum_path_sum_i',
@@ -751,7 +751,7 @@ ans = {
     12: 76_576_500,
     13: 5_537_376_230,
     14: 837_799,
-    # 15: 137846528820,
+    15: 137_846_528_820,
     # 16: 1366,
     # 17: 21124,
     # 18: 1074,
@@ -1510,6 +1510,7 @@ var = {
     12: 500,
     13: 10,
     14: 1_000_000,
+    15: (20, 20),
 }
 
 iters = {
@@ -1527,6 +1528,7 @@ iters = {
     12: 7,
     13: 25_000,
     14: 1,
+    15: 450_000,
 }
 
 pypy_iters = {
@@ -1544,6 +1546,7 @@ pypy_iters = {
     12: 24,
     13: 10_000,
     14: 3,
+    15: 1_150_000,
 }
 
 
