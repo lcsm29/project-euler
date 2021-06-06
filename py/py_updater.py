@@ -1,4 +1,4 @@
-from py_data import file_names, iters
+from py_data import file_names, iters, pypy_iters
 import glob
 import sys
 import os
@@ -99,6 +99,9 @@ def scoreboard_updater(n, result_avg, target_col='py'):
     l_no_avg = line_finder(tmp, n, 'avg')
     l_no_iter = line_finder(tmp, n, 'iter')
     if l_no_iter != 0 and l_no_avg != 0:
+        num_iterations = f'{iters[n]:11,.0f} '
+        if target_col == 'pypy':
+            num_iterations = f'{pypy_iters[n]:11,.0f} '
         tmp[l_no_avg] = (
             tmp[l_no_avg][:pos_finder(tmp[l_no_avg], 'before')]
             + '[' + conv() + ']'
@@ -108,9 +111,10 @@ def scoreboard_updater(n, result_avg, target_col='py'):
         )
         tmp[l_no_iter] = (
             tmp[l_no_iter][:pos_finder(tmp[l_no_iter], 'before')]
-             + f'{iters[n]:11,.0f} '
+             + num_iterations
              + tmp[l_no_iter][pos_finder(tmp[l_no_iter], 'after'):]
         )
+
         with io.open(get_readme_path(), 'w', encoding='utf-8') as f:
             f.writelines(tmp)
     if l_no_avg == 0 and l_no_iter == 0:
@@ -184,11 +188,17 @@ def sysinfo_updater(target_row='py'):
                 + '(' + platform.machine() + ')')
         if platform.system() == 'Windows':
             proc_name = platform.processor()
-            os_name = (
-                platform.system() + ' ' 
-                + platform.release() + ' ' 
-                + platform.win32_edition() + ' '
-                + '(' + platform.machine() + ')')
+            if target_row == 'py':
+                os_name = (
+                    platform.system() + ' ' 
+                    + platform.release() + ' ' 
+                    + platform.win32_edition() + ' '
+                    + '(' + platform.machine() + ')')
+            if target_row == 'pypy':
+                os_name = (
+                    platform.system() + ' ' 
+                    + platform.release() + ' ' 
+                    + '(' + platform.machine() + ')')
         return proc_name if option == 'processor' else os_name
 
     print('Writing system info to README.md...')
