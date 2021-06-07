@@ -31,7 +31,7 @@ d19 = {i: v for i, v in enumerate('''
 d99 = {i: v for i, v in zip(
         map(lambda x: x * 10, range(2, 10)), 
         'twenty thirty forty fifty sixty seventy eighty ninety'.split())}
-dct = d19 | d99 | {0: '', 100: 'hundred', 1_000: 'thousand'}
+dct = {**d19, **d99, 0: '', 100: 'hundred', 1_000: 'thousand'}
 d = {int(1e0) : '',            int(1e1) : 'ten',
      int(1e2) : 'hundred',     int(1e3) : 'thousand',
      int(1e6) : 'million',     int(1e9) : 'billion',
