@@ -19,8 +19,8 @@ file_names = {
     18: 'py_0018_maximum_path_sum_i',
     19: 'py_0019_counting_sundays',
     20: 'py_0020_factorial_digit_sum',
-#    21: 'py_0021_amicable_numbers',
-#    22: 'py_0022_names_scores',
+    21: 'py_0021_amicable_numbers',
+    22: 'py_0022_names_scores',
 #    23: 'py_0023_non-abundant_sums',
 #    24: 'py_0024_lexicographic_permutations',
 #    25: 'py_0025_1000-digit_fibonacci_number',
@@ -757,8 +757,8 @@ ans = {
     18: 1_074,
     19: 171,
     20: 648,
-    # 21: 31626,
-    # 22: 871198282,
+    21: 31_626,
+    22: 871_198_282,
     # 23: 4179871,
     # 24: 2783915460,
     # 25: 4782,
@@ -1516,6 +1516,8 @@ var = {
     18: None,
     19: 20,
     20: 100,
+    21: 10_000,
+    22: 'py_0022_names.txt',
 }
 
 iters = {
@@ -1539,6 +1541,8 @@ iters = {
     18: 26_000,
     19: 3_200,
     20: 30_000,
+    21: 10,
+    22: 250,
 }
 
 pypy_iters = {
@@ -1562,6 +1566,8 @@ pypy_iters = {
     18: 27_000,
     19: 31_000,
     20: 95_000,
+    21: 10,
+    22: 1_300,
 }
 
 
