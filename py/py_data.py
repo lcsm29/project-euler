@@ -21,7 +21,7 @@ file_names = {
     20: 'py_0020_factorial_digit_sum',
     21: 'py_0021_amicable_numbers',
     22: 'py_0022_names_scores',
-#    23: 'py_0023_non-abundant_sums',
+    23: 'py_0023_non-abundant_sums',
 #    24: 'py_0024_lexicographic_permutations',
 #    25: 'py_0025_1000-digit_fibonacci_number',
 #    26: 'py_0026_reciprocal_cycles',
@@ -759,7 +759,7 @@ ans = {
     20: 648,
     21: 31_626,
     22: 871_198_282,
-    # 23: 4179871,
+    23: 4_179_871,
     # 24: 2783915460,
     # 25: 4782,
     # 26: 983,
@@ -1518,6 +1518,7 @@ var = {
     20: 100,
     21: 10_000,
     22: 'py_0022_names.txt',
+    23: 28_123,
 }
 
 iters = {
@@ -1543,6 +1544,7 @@ iters = {
     20: 30_000,
     21: 10,
     22: 250,
+    23: 1,
 }
 
 pypy_iters = {
@@ -1568,6 +1570,7 @@ pypy_iters = {
     20: 95_000,
     21: 10,
     22: 1_300,
+    23: 1,
 }
 
 
