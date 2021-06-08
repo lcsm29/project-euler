@@ -18,7 +18,7 @@ file_names = {
     17: 'py_0017_number_letter_counts',
     18: 'py_0018_maximum_path_sum_i',
     19: 'py_0019_counting_sundays',
-#    20: 'py_0020_factorial_digit_sum',
+    20: 'py_0020_factorial_digit_sum',
 #    21: 'py_0021_amicable_numbers',
 #    22: 'py_0022_names_scores',
 #    23: 'py_0023_non-abundant_sums',
@@ -756,7 +756,7 @@ ans = {
     17: 21_124,
     18: 1_074,
     19: 171,
-    # 20: 648,
+    20: 648,
     # 21: 31626,
     # 22: 871198282,
     # 23: 4179871,
@@ -1515,6 +1515,7 @@ var = {
     17: 1_000,
     18: None,
     19: 20,
+    20: 100,
 }
 
 iters = {
@@ -1537,6 +1538,7 @@ iters = {
     17: 680,
     18: 23_000,
     19: 2_800,
+    20: 30_000,
 }
 
 pypy_iters = {
@@ -1559,6 +1561,7 @@ pypy_iters = {
     17: 1_650,
     18: 23_000,
     19: 2_800,
+    20: 95_000,
 }
 
 
