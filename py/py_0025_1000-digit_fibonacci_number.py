@@ -24,24 +24,50 @@
 # 
 # by lcsm29 http://github.com/lcsm29/project-euler
 import timed
+import sys
+sys.setrecursionlimit(10000)
 
 
-def fn_recursive(n):
-    def fib(n, computed = {0: 0, 1: 1}):
-        if n not in computed:
-            computed[n] = fib(n-1, computed) + fib(n-2, computed)
-        return computed[n]
+def fn_recursive_bisect(n):
+    def fib(num, computed = {0: 0, 1: 1}):
+        if num not in computed:
+            computed[num] = fib(num - 1, computed) + fib(num - 2, computed)
+        return computed[num]
+    
+    def get_high():
+        high = 100
+        while len(str(fib(high))) < n:
+            high *= 2
+        return high
+    
+    def bsct(n, l=0, h=get_high()):
+        m = (l + h) // 2
+        while 1:
+            tmp = len(str(fib(m)))
+            if tmp < n:
+                l, m = m, (m + h) // 2
+            if tmp > n:
+                h, m = m, (m + l) // 2
+            if tmp == n:
+                break
+        return l, m
 
-    i = 0
-    while 1:
-        i += 1
-        tmp = fib(i)
-        if len(str(tmp)) >= n:
+    low, mid = bsct(n)
+    for i in range(low, mid + 1):
+        if len(str(fib(i))) >= n:
             return i
+
+
+def fn_fib_next(n):
+    a, b, i = 1, 1, 2
+    while len(str(b)) < n:
+        a, b, i = b, a + b, i + 1
+    return i
 
 
 if __name__ == '__main__':
     n = 1_000
     i = 40
     prob_id = 25
-    timed.caller(fn_recursive, n, i, prob_id)
+    timed.caller(fn_recursive_bisect, n, i, prob_id)
+    timed.caller(fn_fib_next, n, i, prob_id)
