@@ -48,7 +48,7 @@ def fn_prime_based(n):
 
 
 if __name__ == '__main__':
-    n = 1000
+    n = 1_000
     i = 10
     prob_id = 26
     timed.caller(fn_prime_based, n, i, prob_id)
