@@ -24,7 +24,7 @@ file_names = {
     23: 'py_0023_non-abundant_sums',
     24: 'py_0024_lexicographic_permutations',
     25: 'py_0025_1000-digit_fibonacci_number',
-#    26: 'py_0026_reciprocal_cycles',
+    26: 'py_0026_reciprocal_cycles',
 #    27: 'py_0027_quadratic_primes',
 #    28: 'py_0028_number_spiral_diagonals',
 #    29: 'py_0029_distinct_powers',
@@ -762,7 +762,7 @@ ans = {
     23: 4_179_871,
     24: 2_783_915_460,
     25: 4_782,
-    # 26: 983,
+    26: 983,
     # 27: -59231,
     # 28: 669171001,
     # 29: 9183,
@@ -1549,6 +1549,7 @@ iters = {
     23: 1,
     24: 75,
     25: 40,
+    26: 10,
 }
 
 pypy_iters = {
@@ -1577,6 +1578,7 @@ pypy_iters = {
     23: 2,
     24: 35,
     25: 11,
+    26: 10,
 }
 
 
