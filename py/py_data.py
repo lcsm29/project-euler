@@ -25,7 +25,7 @@ file_names = {
     24: 'py_0024_lexicographic_permutations',
     25: 'py_0025_1000-digit_fibonacci_number',
     26: 'py_0026_reciprocal_cycles',
-#    27: 'py_0027_quadratic_primes',
+    27: 'py_0027_quadratic_primes',
 #    28: 'py_0028_number_spiral_diagonals',
 #    29: 'py_0029_distinct_powers',
 #    30: 'py_0030_digit_fifth_powers',
@@ -763,7 +763,7 @@ ans = {
     24: 2_783_915_460,
     25: 4_782,
     26: 983,
-    # 27: -59231,
+    27: -59_231,
     # 28: 669171001,
     # 29: 9183,
     # 30: 443839,
@@ -1522,6 +1522,7 @@ var = {
     24: 1_000_000,
     25: 1_000,
     26: 1_000,
+    27: 1_000,
 }
 
 iters = {
@@ -1551,6 +1552,7 @@ iters = {
     24: 75,
     25: 40,
     26: 15,
+    27: 19,
 }
 
 pypy_iters = {
@@ -1580,6 +1582,7 @@ pypy_iters = {
     24: 35,
     25: 11,
     26: 220,
+    27: 25,
 }
 
 
