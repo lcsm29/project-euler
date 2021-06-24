@@ -47,8 +47,22 @@ def fn_prime_based(n):
     return max(length, key=length.get)
 
 
+def fn_math_based(j):
+    length = ans = 0
+    for i in range(3, j, 2):
+        if i % 5 == 0: 
+            continue
+        j = 9
+        while j % i != 0:
+            j = 10 * j + 9
+        if j > length:
+            length, ans = j, i
+    return ans
+
+
 if __name__ == '__main__':
     n = 1_000
-    i = 10
+    i = 8
     prob_id = 26
     timed.caller(fn_prime_based, n, i, prob_id)
+    timed.caller(fn_math_based, n, i, prob_id)
