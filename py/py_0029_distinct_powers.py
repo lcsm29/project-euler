@@ -22,11 +22,7 @@ import timed
 
 
 def fn_brute(n):
-    save = []
-    for i in range(2, n + 1):
-        for j in range(2, n + 1):
-            save.append(i**j)
-    return len(set(save))
+    return len(set([i**j for i in range(2, n + 1) for j in range(2, n + 1)]))
 
 if __name__ == '__main__':
     n = 100
