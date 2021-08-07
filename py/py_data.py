@@ -29,7 +29,7 @@ file_names = {
     28: 'py_0028_number_spiral_diagonals',
     29: 'py_0029_distinct_powers',
     30: 'py_0030_digit_fifth_powers',
-#    31: 'py_0031_coin_sums',
+    31: 'py_0031_coin_sums',
 #    32: 'py_0032_pandigital_products',
 #    33: 'py_0033_digit_cancelling_fractions',
 #    34: 'py_0034_digit_factorials',
@@ -767,7 +767,7 @@ ans = {
     28: 669_171_001,
     29: 9_183,
     30: 443_839,
-    # 31: 73682,
+    31: 73_682,
     # 32: 45228,
     # 33: 100,
     # 34: 40730,
@@ -1526,6 +1526,7 @@ var = {
     28: 1_001,
     29: 100,
     30: 5,
+    31: 200,
 }
 
 iters = {
@@ -1559,6 +1560,7 @@ iters = {
     28: 4_500,
     29: 250,
     30: 2,
+    31: 15_000,
 }
 
 pypy_iters = {
@@ -1592,6 +1594,7 @@ pypy_iters = {
     28: 130_000,
     29: 125,
     30: 14,
+    31: 25_000,
 }
 
 
